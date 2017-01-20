@@ -20,7 +20,29 @@ public class FizzBuzz {
         main.fizzBuzz(50);
     }
 
+    public FizzBuzz() {
+        
+    }
+    
+    public FizzBuzz(int loopValue) {
+        this.fizzBuzz(loopValue);
+    }
+
     private void fizzBuzz(int maxValue) {
-        // TODO: Insert your code here
+        String printFizz = "Fizz";
+        String printBuzz = "Buzz";
+        
+        for (int currValue = 0; currValue <= maxValue; currValue ++) {
+            if (currValue != 0) {
+                if (currValue % 3 == 0) {
+                    System.out.print(printFizz);
+                }
+                if (currValue % 5 == 0) {
+                    System.out.print(printBuzz);
+                } else {
+                    System.out.print(maxValue);
+                }
+            }
+        }
     }
 }

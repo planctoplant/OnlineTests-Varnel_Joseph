@@ -11,13 +11,18 @@
 </head>
 
 <body ng-app="FullStackApp">
-<div class="container">
+<div ng-controller="departments" class="container">
     <h1>Gestion des employés</h1>
-    <div ng-controller="departments" ng-cloak class="ng-cloak">
+    <div ng-cloak class="ng-cloak">
         <h3>Départements</h3>
         <ul>
             <li ng-repeat="department in departments">{{ department.name }}</li>
         </ul>
+        <div>
+            Département
+            <input type="text" ng-model="departmentName"/>
+            <button ng-click="addDepartement()">Ajouter</button>
+        </div>
     </div>
     <div ng-controller="employees" ng-cloak class="ng-cloak">
         <h3>Employés</h3>
@@ -30,6 +35,25 @@
                         <li>Salaire: {{employee.salary}} $</li>
                         <li>Département: {{employee.department.name}}</li>
                     </ul>
+                    <div>
+                        <h5>Edition</h5>
+                        <div class="form-group">
+                            <label class="control-label">Salaire</label>
+                            <input class="form-control" type="text" ng-model="employee.salary"/>
+                        </div>
+                        
+                        <div class="ng-cloak form-group">
+                            <label class="control-label">Département</label>
+                            <select class="form-control" ng-model="employee.department.name">
+                                <option value="{{department.id}}" ng-repeat="department in departments">{{ department.name }}</option>
+                            </select>
+                        <div>
+                        
+                        <div class="form-group">
+                            <button ng-click="updateEmployee()">Update</button>
+                        </div>
+                    </div>
+                    <hr/>
                 </div>
             </li>
         </ul>

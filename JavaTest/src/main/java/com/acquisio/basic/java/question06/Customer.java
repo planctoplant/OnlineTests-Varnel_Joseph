@@ -1,6 +1,6 @@
 package com.acquisio.basic.java.question06;
 
-class Customer {
+public abstract class Customer {
     String type; // enterprise, professional or private
     double monthlyFee;
 
@@ -24,4 +24,11 @@ class Customer {
     public void setMonthlyFee(double monthlyFee) {
         this.monthlyFee = monthlyFee;
     }
+    
+    abstract double getMonthlyMarginFees();
 }
+
+
+
+
+

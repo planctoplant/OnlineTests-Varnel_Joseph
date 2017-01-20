@@ -1,5 +1,7 @@
 package com.acquisio.basic.java.question02;
 
+import org.w3c.dom.NodeList;
+
 /**
  * QUESTION 2: TreeNode
  * Using the tree structure define at
@@ -31,5 +33,7 @@ public class TreeNavigation {
         Node n4 = new Node("5", null, n3);
         Node n = new Node("2", n2, n4);
         // TODO: Implement code here
+        
+        n.printTree();
     }
 }

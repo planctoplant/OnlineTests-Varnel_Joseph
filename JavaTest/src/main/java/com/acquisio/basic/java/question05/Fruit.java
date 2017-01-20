@@ -11,4 +11,8 @@ class Fruit extends Item {
     public String getColor() {
         return color;
     }
+    
+    public String genericStockPrint() {
+        return String.format("%s [%s] : %d units", this.getName(), this.getColor(), this.getQuantity());
+    }
 }

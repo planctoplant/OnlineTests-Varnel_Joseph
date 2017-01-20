@@ -12,12 +12,22 @@ public class IssueResolving {
         IssueResolving instance = new IssueResolving();
         System.out.println(instance.factorial(7));
     }
+    
+    public IssueResolving() {}
 
     private int factorial(int n) {
         // TODO: Fix code here.
         int result = 0;
-        result = factorial(n - 1) * n;
+        if (n == 1) {
+            result = 1;
+        } else {
+            result = factorial(n - 1) * n;
+        }
         return result;
+    }
+    
+    public int getFactorial(int n) {
+        return this.factorial(n);
     }
 
 }

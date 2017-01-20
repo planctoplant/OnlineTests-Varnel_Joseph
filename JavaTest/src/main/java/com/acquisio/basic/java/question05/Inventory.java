@@ -40,4 +40,8 @@ class Inventory {
         }
         return null;
     }
+    
+    public List<Item> getItems() {
+        return items;
+    }
 }

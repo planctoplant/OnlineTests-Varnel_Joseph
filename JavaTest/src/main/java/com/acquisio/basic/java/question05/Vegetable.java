@@ -18,4 +18,9 @@ class Vegetable extends Item {
     public String getOrigin() {
         return origin;
     }
+    
+    
+    public String genericStockPrint() {
+        return String.format("%s [%s] : %d units", this.getName(), this.getType(), this.getQuantity());
+    }
 }

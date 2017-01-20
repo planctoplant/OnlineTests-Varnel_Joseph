@@ -23,8 +23,9 @@ public class Debugging {
         // TODO: Fix code here.
 
         List<Integer> integers = new ArrayList<>(Arrays.asList(values));
+        List<Integer> integersParams = new ArrayList<>(Arrays.asList(values));
 
-        for (Integer i : integers) {
+        for (Integer i : integersParams) {
             if (i % 2 == 0) { // remove even numbers
                 integers.remove(i);
             }

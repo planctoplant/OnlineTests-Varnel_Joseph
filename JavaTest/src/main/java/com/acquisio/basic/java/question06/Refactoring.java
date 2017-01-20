@@ -20,9 +20,9 @@ public class Refactoring {
 
     private double sumFees() {
         // TODO: Feel free to change any classes in this package.
-        Customer c1 = new Customer("enterprise", 1000.0d);
-        Customer c2 = new Customer("professional", 49.99d);
-        Customer c3 = new Customer("private", 9.99d);
+        Customer c1 = new CustomerEnterprise(1000.0d);
+        Customer c2 = new CustomerProfessional(49.99d);
+        Customer c3 = new CustomerPrivate(9.99d);
         return FeeCalculator.sumFeesWithMargin(c1, c2, c3);
     }
 }

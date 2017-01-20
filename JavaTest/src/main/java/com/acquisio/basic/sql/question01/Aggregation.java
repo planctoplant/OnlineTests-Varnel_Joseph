@@ -42,15 +42,15 @@ public class Aggregation {
     private void printNumberOfEmployeesPerProject() throws SQLException {
         try (Connection conn = H2DBUtil.getConnection()) {
             // Start : For consultation only, can be removed
-//            H2DBUtil.displayTableRows(conn, "projects");
-//            H2DBUtil.displayTableRows(conn, "departments");
-//            H2DBUtil.displayTableRows(conn, "employees");
-//            H2DBUtil.displayTableRows(conn, "employees_projects");
+            //H2DBUtil.displayTableRows(conn, "projects");
+            //H2DBUtil.displayTableRows(conn, "departments");
+            //H2DBUtil.displayTableRows(conn, "employees");
+            //H2DBUtil.displayTableRows(conn, "employees_projects");
             // End : For consultation only, can be removed
 
             // TODO: Insert query here
             // See requirement in this class javadoc
-            String query = "select 1 as dummyValue from dual";
+            String query = "select distinct projects.title, count(*) from projects LEFT JOIN employees_projects ON projects.id=employees_projects.project_id group by projects.title ";
 
             ResultSet resultSet = conn.createStatement().executeQuery(query);
             H2DBUtil.displayResultSet(resultSet);

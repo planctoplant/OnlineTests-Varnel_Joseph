@@ -23,4 +23,6 @@ abstract class Item {
     public double getPrice() {
         return price;
     }
+    
+    abstract String genericStockPrint();
 }

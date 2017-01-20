@@ -50,7 +50,8 @@ public class Extraction {
 
             // TODO: Insert query here
             // See requirement in this class javadoc
-            String query = "select 1 as dummyValue from dual";
+            //String query = "select 1 as dummyValue from dual";
+            String query = "select distinct employees.first_name, employees.last_name, departments.name from employees LEFT JOIN departments on employees.department_id = departments.id LEFT JOIN employees_projects ON employees.id = employees_projects.employee_id where employees.id not in (select employees_projects.employee_id from employees_projects)";
             
             ResultSet resultSet = conn.createStatement().executeQuery(query);
             H2DBUtil.displayResultSet(resultSet);

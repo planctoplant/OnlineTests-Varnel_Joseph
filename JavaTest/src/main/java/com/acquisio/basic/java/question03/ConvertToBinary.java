@@ -16,8 +16,21 @@ public class ConvertToBinary {
         ConvertToBinary instance = new ConvertToBinary();
         System.out.println(instance.convertToBinary(17));
     }
+    
+    public ConvertToBinary() {}
+    
 
     private String convertToBinary(int val) {
-        return null; // TODO: Insert your code here.
+        int binFormat = recBin(val);
+        return Integer.toString(binFormat);
+    }
+    
+    public int recBin(int dec) {
+        int remainder=dec%2;
+        if (dec==1 || dec==0) {
+            return dec;
+        } else {
+            return remainder + (recBin(dec/2)*10);
+        }
     }
 }
